@@ -35,43 +35,37 @@ Fonte: Random Nerd Tutorials (https://randomnerdtutorials.com/esp32-esp8266-rasp
 Autor: Nicholas Eiti Dan
 */
 
-function txt_to_deg($txt){
-	$r1 = str_replace("d", "°", $txt);
-	$r2 = str_replace("m", "'", $r1);
-	$r3 = str_replace("s", '.0"', $r2);
-	return $r3;
-}
-
-
 # Informações sobre a conexão da tabela no SQL
 $servername = "localhost";
 $dbname = "lab_iot";
 $username = "admin";
 $password = "admin";
 
-# Atualizar este objeto por uma PDO
-$conn = new mysqli($servername, $username, $password, $dbname);
-
 # Código para a página recarregar a cada 5 segundos
 # header("refresh: 5");
 
-echo "<p>Como uma solução simples para a atualização de imagens, a página recarrega a cada 5 segundos.</p>";
+# Atualizar este objeto por uma PDO
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+# Verifica a integridade da conexão
 if($conn->connect_error){ die("Connection failed: "
 	. $conn->error);
 }
 
+# Sentença em SQL
 $sql_cmd = "SELECT `id`, `lat`, `long`, `TIME` FROM gps_info";
 
+# Realiza a operação da sentença SQL
 if($result = $conn->query($sql_cmd)) {
-	while($row = $result->fetch_assoc()){
+	while($row = $result->fetch_assoc()){ # Itera por cada item recolhido
 		echo "id: " . $row['id'] . "; lat: " . $row['lat'] . "; lng: " . $row['long'];
-		#echo ' <a href=https://www.google.com/maps/place/' . txt_to_deg($row['lat']) . '+' . txt_to_deg($row['long']) . '>' . "link</a>";
 		echo "<br>";
 	}
+	# Limpa a variável
 	$result->free();
 }
 
+# Fecha a conexão
 $conn->close();
 
 ?>
