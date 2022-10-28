@@ -6,5 +6,6 @@ Este é o repositório do webserver do Projeto Pégasus - VAR. Neste, uma Raspbe
 
 > **Como baixar este diretório no seu projeto**
 > ***
+> Duas Alternativas:<br>
 > 1- Baixe o .zip do repositório a partir da aba code <br>
 > 2- Acesse em seu server o diretório <code>/var/www/html</code> e digite no terminal: <code>sudo git clone https://github.com/NicholasEiti/server-labrador.git</code>
