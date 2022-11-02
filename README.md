@@ -4,6 +4,8 @@ Lab IoT faz parte do projeto [OCUBO](http://ocubo.cpscetec.com.br/) do [Centro P
 
 Este é o repositório do webserver do Projeto Pégasus - VAR. Neste, uma Raspberry Pi envia coordenadas adquiridas a partir de um módulo de GPS para um webserver *hosteado* em uma Caninos Loucos (com Debian OS). A documentação completa deste projeto pode ser vista na pasta [Documentação](/Documentação).
 
+Este repositório deve ser baixado em um computador Debian no diretório: /var/www/html.
+
 > **Como baixar este diretório no seu projeto**
 > ***
 > Duas Alternativas:<br>
